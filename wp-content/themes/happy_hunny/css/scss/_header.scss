@@ -1,0 +1,26 @@
+#topbar{
+    background-color:$tobBarBG;
+    padding:10px;
+    text-align: center;
+
+    p{
+        margin-bottom:0px;
+        color: #FFFFFF;
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 20px;
+    }
+}
+
+header{
+    &#masthead{
+        background-image:url("../../../uploads/2023/07/header-beetrail.svg");
+        background-repeat: no-repeat;
+        background-size:100px 300px;
+        background-position: center-left;
+
+        
+    }
+}
