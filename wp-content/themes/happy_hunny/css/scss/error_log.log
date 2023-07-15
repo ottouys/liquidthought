@@ -3,3 +3,6 @@
 07/15/23 12:48:57: child-theme.scss - `header` file not found for @import: child-theme.scss on line 6, at column 1
 07/15/23 12:49:37: child-theme.scss - `header` file not found for @import: child-theme.scss on line 6, at column 1
 07/15/23 12:49:48: child-theme.scss - `general` file not found for @import: child-theme.scss on line 7, at column 1
+07/15/23 2:41:19: child-theme.scss - Undefined mixin box-shadow: _general.scss on line 7, at column 3
+Call Stack:
+#0 import _general.scss child-theme.scss on line 9

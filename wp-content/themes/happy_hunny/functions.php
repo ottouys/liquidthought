@@ -19,9 +19,14 @@ function hh_theme_enqueue_styles() {
 		'1'
 	);
 	
+  wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/main.js', array( 'jquery' ),filemtime(get_stylesheet_directory_uri() . '/js/main.js'),true );
 }
+
 
 // Allow Options Page
 if( function_exists('acf_add_options_page') ) {    
-    acf_add_options_page();    
+  acf_add_options_page();    
 }
+
+// Shortcodes
+require_once('includes/shortcodes/product_row.php');

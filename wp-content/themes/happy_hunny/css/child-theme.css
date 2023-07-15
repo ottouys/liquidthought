@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  font-family: Poppins;
+}
 #topbar {
   background-color: #F19096;
   padding: 10px;
@@ -7,19 +10,85 @@
 #topbar p {
   margin-bottom: 0px;
   color: #FFFFFF;
-  font-family: Poppins;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 20px;
 }
-header#masthead {
-  background-image: url("../../../uploads/2023/07/header-beetrail.svg");
-  background-repeat: no-repeat;
-  background-size: 100px 300px;
-  background-position: center-left;
+body {
+  background: url(//happyhunny.co.za/cdn/shop/t/2/assets/bee-desktop-1.webp?v=80096687704958325541655707739) top 150px right calc(50% + 440px) no-repeat;
+}
+header#masthead h2 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 50px;
+  text-align: center;
+}
+header#masthead #header-categories {
+  position: relative;
+}
+header#masthead #header-categories::before {
+  content: "";
+  background: url(//happyhunny.co.za/cdn/shop/t/2/assets/home-intro-left.png?v=146906331530739839451654252713) left bottom no-repeat;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+header#masthead #header-categories::after {
+  content: "";
+  background: url(//happyhunny.co.za/cdn/shop/t/2/assets/home-intro-right.png?v=16488003890253336451654252715) right bottom no-repeat;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+header#masthead #header-categories .container {
+  z-index: 1;
+  position: relative;
+}
+header#masthead #header-categories .container .row {
+  padding: 3rem 0px;
+}
+header#masthead #header-categories .container .row .img-responsive {
+  position: relative;
+  height: 106%;
+  top: -3%;
+}
+header#masthead #header-categories .container .row .card {
+  height: 100%;
+}
+header#masthead #header-categories h4 {
+  color: #1D1D1A;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-align: center;
+}
+header#masthead #header-categories p {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
 }
 body {
   color: #1D1D1A;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+}
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 /*# sourceMappingURL=child-theme.css.map */

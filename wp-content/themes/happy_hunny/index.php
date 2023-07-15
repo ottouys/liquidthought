@@ -1,23 +1,5 @@
-<?php
-get_header();
- 
-// Start “The Loop”
-if ( have_posts() ) : // Does our website have any posts to  display?
+<?php get_header(); ?>
 
-    while (  have_posts() ) : the_post(); // If the answer is “yes”, let’s run some code.
+<?php echo do_shortcode("[product_row]"); ?>
 
-        the_content();  // Let’s display the content of our post.
-
-    endwhile; // There  are no more posts to display, let’s shut this down.
-
-else : // If we don’t have any posts, let’s display a custom  message below.
-
-    _e( 'Sorry, no  posts matched your criteria.', 'textdomain' );
-
-endif; // OK, we can stop looking for posts now.
-
-// End of “The Loop”
-
-get_sidebar();
-get_footer();
-?>
+<?php get_footer(); ?>
