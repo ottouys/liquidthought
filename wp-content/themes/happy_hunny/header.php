@@ -115,6 +115,9 @@
             </div>
         </hgroup>
 
+        <div class="imagery">
+        </div>
+
         
         
 		<nav id="site-navigation" class="main-navigation">
