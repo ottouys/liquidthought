@@ -92,7 +92,7 @@
     
     ?>
     <header id="masthead" class="site-header">
-      <hgroup class="container">
+      <hgroup id="desktop" class="container">
         <div class="row">
           <div class="col search">
             <?php if(isset($search_icon)) : ?>
@@ -106,7 +106,9 @@
           <div class="col text-center main-logos">
 
             <?php if(isset($main_header_logo)) : ?>
-            <img src="<?php echo $main_header_logo; ?>" alt="Happy Hunny">
+            <a href="./">
+              <img src="<?php echo $main_header_logo; ?>" alt="Happy Hunny">
+            </a>
             <?php else : ?>
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
                 rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -118,6 +120,61 @@
             <?php endif ; ?>
             <?php if(isset($wishlist)) : ?>
             <a href="/wishlist"><img src="<?php echo $wishlist; ?>" alt="View My Wishlist"></a>
+            <?php endif ; ?>
+            <?php if(isset($cart)) : ?>
+            <a href="/cart"><img src="<?php echo $cart; ?>" alt="View My Cart"></a>
+            <?php endif ; ?>
+          </div>
+        </div>
+      </hgroup>
+
+      <hgroup id="mobile" class="container">
+        <div class="row">
+          <div class="burger-menu">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
+                class="icon icon-hamburger" fill="none" viewBox="0 0 18 16">
+                <path
+                  d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z"
+                  fill="currentColor">
+                </path>
+              </svg>
+
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
+                class="icon icon-close" fill="none" viewBox="0 0 14 14">
+                <style data-shopify="">
+                .st0 {
+                  fill: none;
+                  stroke: #1D1D1A;
+                  stroke-width: 2.5;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+                </style>
+                <path class="st0" d="M1.3,1.3l11.3,11.3 M12.6,1.3L1.3,12.6"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="col text-center main-logos">
+
+            <?php if(isset($main_header_logo)) : ?>
+            <a href="./">
+              <img src="<?php echo $main_header_logo; ?>" alt="Happy Hunny">
+            </a>
+            <?php else : ?>
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php endif ; ?>
+          </div>
+          <div class="col socials">
+            <?php if(isset($search_icon)) : ?>
+            <div class="search">
+              <div class="icon">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  <img src="<?php echo $search_icon; ?>" alt="Search">
+                </button>
+              </div>
+            </div>
             <?php endif ; ?>
             <?php if(isset($cart)) : ?>
             <a href="/cart"><img src="<?php echo $cart; ?>" alt="View My Cart"></a>

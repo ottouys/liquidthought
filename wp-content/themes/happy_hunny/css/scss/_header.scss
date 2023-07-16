@@ -24,7 +24,7 @@
 body {
   background: url(//happyhunny.co.za/cdn/shop/t/2/assets/bee-desktop-1.webp?v=80096687704958325541655707739) top 39px right calc(50% + 399px) no-repeat;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     background: none;
   }
 }
@@ -32,15 +32,92 @@ body {
 header {
   &#masthead {
     padding-top: 3rem;
+    position: relative;
 
-    hgroup.container {
-      .row {
-        @include align-items(center);
+    hgroup {
+      &#mobile {
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+
+        .burger-menu {
+          display: block;
+          width: 30px;
+          margin-left: 20px;
+
+          .icon-close {
+            display: none;
+          }
+        }
+
+        .main-logos {
+          img {
+            max-width: 100%;
+            margin-left: 30px;
+          }
+        }
+
+        .socials {
+          text-align: right;
+
+          .search {
+            display: inline-flex;
+          }
+        }
+      }
+
+      &#desktop {
+        @include media-breakpoint-down(lg) {
+          display: none;
+        }
+      }
+
+      &.container {
+        .row {
+          @include align-items(center);
+        }
       }
     }
 
     #site-navigation.main-navigation {
       padding: 3rem 0px;
+      opacity: 1;
+
+      @include media-breakpoint-down(lg) {
+        position: absolute;
+        right: 150%;
+        background-color: white;
+        z-index: 0;
+        top: 115px;
+        opacity: 1;
+        transition: 1s all;
+        max-height: 80vh;
+        padding-top: 0px;
+        width: 98%;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+
+        .menu-main-menu-container {
+          display: flex;
+          flex-wrap: wrap;
+          background-color: white;
+
+          #menu-main-menu {
+            flex-wrap: wrap;
+
+            li {
+              flex-basis: 100%;
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+
+      &.mobile-toggle {
+        @include media-breakpoint-down(lg) {
+          right: 1%;
+          z-index: 100;
+        }
+      }
 
       ul {
         list-style: none;
@@ -112,6 +189,7 @@ header {
           border: none;
           background-color: transparent;
           box-shadow: none;
+          padding: 5px;
         }
       }
     }
@@ -165,8 +243,11 @@ header {
 
       .img-responsive {
         position: relative;
-        height: 106%;
         top: -3%;
+
+        @include media-breakpoint-down(lg) {
+          display: none;
+        }
       }
 
       .card {
@@ -206,7 +287,7 @@ header {
       li {
         border: none;
         border-radius: 18px;
-        padding: 3px 20px;
+        padding: 7px 25px;
         background-color: transparent;
 
         a {
@@ -214,7 +295,10 @@ header {
           font-weight: 500;
           letter-spacing: 0;
           line-height: 21px;
-          color: $textColor;
+          padding: 0;
+          display: block;
+          color: #1D1D1A;
+          font-family: Poppins;
         }
 
         &.ui-state-active {
@@ -224,6 +308,24 @@ header {
             color: white;
           }
         }
+      }
+    }
+
+    .ui-tabs-panel {
+      a {
+        display: block;
+        width: 100%;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 24px;
+        text-align: center;
+        color: #1D1D1A;
+        font-family: Poppins;
+        margin-bottom: 5px;
+        padding: 12px 0px;
+        border-radius: 16px;
       }
     }
   }

@@ -9,3 +9,109 @@
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 21px;
+  padding: 13px 31px;
+  color: #1D1D1A;
+  font-family: Poppins;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+
+  &.btn-dark {
+    background-color: #1D1D1A;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+    color: white;
+  }
+
+  &.btn-secondary {
+    color: #1D1D1A;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: white;
+  }
+}
+
+li.product {
+  list-style: none;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+
+  @include flex-basis(46%);
+  max-width: 46%;
+  margin-bottom: 20px;
+
+  @include media-breakpoint-up(lg) {
+    @include flex-basis(23%);
+    max-width: 23%;
+  }
+
+  a {
+    padding-bottom: 10px;
+    color: #1D1D1A;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 20px;
+    @include flexbox;
+    @include flex-wrap(wrap);
+
+    img {
+      border-radius: 16px;
+      display: block;
+      max-width: 100%;
+    }
+
+    h2,
+    .price,
+    .description {
+      padding: 0px 20px;
+      margin-bottom: .5rem;
+    }
+
+    h2 {
+      color: #1D1D1A;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 24px;
+      @include flex-basis(100%);
+      padding-top: 21px;
+    }
+
+    .price {
+      display: block;
+      color: #1D1D1A;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 24px;
+      @include flex-basis(100%);
+      @include order(2);
+    }
+
+    .description {}
+
+    &.add_to_cart_button {
+      display: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.search-results {
+  li.product {
+    margin: 0px 10px 30px;
+
+  }
+}

@@ -9,28 +9,21 @@
 <footer id="colophon" role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col footer-main-info">
         <h2>Stay up to date</h2>
         <h6>Whether you want to stay in the loop with Happy Hunny updates or just say "hi" when you miss us, subscribe
           to our mailing list today.</h6>
         <div id="newsletter-signup">
           <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8"
-            class="newsletter-form"><input type="hidden" name="form_type" value="customer"><input type="hidden"
-              name="utf8" value="✓">
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            <div class="newsletter-form__field-wrapper">
-              <div class="field">
-                <input id="NewsletterForm--footer" type="email" name="contact[email]" class="field__input" value=""
-                  aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email"
-                  required="">
-                <label class="field__label" for="NewsletterForm--footer">
-                  Email
-                </label>
-                <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe"
-                  aria-label="Subscribe">
-                  Sign me up
-                </button>
-              </div>
+            class="newsletter-form">
+            <div class="fields">
+              <input id="NewsletterForm--footer" type="email" name="contact[email]" class="field__input" value=""
+                aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email"
+                required="">
+              <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe"
+                aria-label="Subscribe">
+                Sign me up
+              </button>
             </div>
           </form>
           <span>We don't do spam. While our newsletters are short and always sweet, you can unsubscribe at any
@@ -46,7 +39,9 @@
 
       </div>
     </div>
-    <div class="hr"></div>
+    <div class="seperator">
+      <hr />
+    </div>
     <div class="row copyright">
       <p>Copyright © 2022 Happy Hunny | All rights reserved</p>
       <div>

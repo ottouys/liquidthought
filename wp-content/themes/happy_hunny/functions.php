@@ -41,6 +41,6 @@ add_action ( 'woocommerce_after_shop_loop_item_title', 'custom_after_title' );
   function custom_after_title() {
   global $product;
   if ( $product->get_description() ) {
-    echo $product->get_description();
+    echo "<span class='description'>" . $product->get_description() . "</span>";
   }
 }
