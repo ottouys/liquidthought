@@ -52,7 +52,25 @@
             echo <<<HTML
                 <div id="topbar">                
                     <div class="content">                        
-                        <p>$text</p>
+                        <p>
+                          <a href="/shop">
+                          $text
+                            <svg class="icon icon-arrow" width="17px" height="11px" viewBox="0 0 17 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g id="Category" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                  <g id="Happy-Hunny-Category-Filter-1-Mobile" transform="translate(-319.000000, -113.000000)" stroke="#FFFFFF" stroke-width="2">
+                                      <g id="Filter-Menu-|-Level-1" transform="translate(50.000000, 0.000000)">
+                                          <g id="Item" transform="translate(25.000000, 108.000000)">
+                                              <g id="long-arrow-right" transform="translate(245.000000, 6.000000)">
+                                                  <line x1="4.7582099e-17" y1="4.363961" x2="13.7146063" y2="4.363961" id="Line"></line>
+                                                  <polyline id="Path" transform="translate(10.628820, 4.363961) rotate(-315.000000) translate(-10.628820, -4.363961) " points="7.54303346 1.27817458 13.7146063 1.27817458 13.7146063 7.44974742"></polyline>
+                                              </g>
+                                          </g>
+                                      </g>
+                                  </g>
+                              </g>
+                          </svg>
+                        </p>
+                      </a>
                     </div>
                 </div>
             HTML;            
@@ -79,26 +97,13 @@
           <div class="col search">
             <?php if(isset($search_icon)) : ?>
             <div class="icon">
-              <img src="<?php echo $search_icon; ?>" alt="Search">
-            </div>
-            <div class="form">
-              <form role="search" method="get" id="searchform" class="searchform"
-                action="http://localhost/liquidthought/">
-                <div>
-                  <label class="screen-reader-text" for="s">Search for:</label>
-                  <input type="text" value="" name="s" id="s">
-                  <input type="submit" id="searchsubmit" value="Search">
-                </div>
-              </form>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <img src="<?php echo $search_icon; ?>" alt="Search">
+              </button>
             </div>
             <?php endif ; ?>
           </div>
           <div class="col text-center main-logos">
-            <?php if(isset($icon)) : ?>
-            <img src="<?php echo $icon; ?>" alt="Logo">
-            <?php else : ?>
-            <img src="<?php echo get_site_icon_url(); ?>" alt="Logo">
-            <?php endif ; ?>
 
             <?php if(isset($main_header_logo)) : ?>
             <img src="<?php echo $main_header_logo; ?>" alt="Happy Hunny">
@@ -125,102 +130,11 @@
         <?php
 			wp_nav_menu(
 				array(
-          'menu'           => 'Main Menu'
-					// 'theme_location' => 'primary',
-					// 'menu_class'     => 'nav-menu',
+          'menu'           => 'Main Menu'					
 				)
 			);
 			?>
       </nav><!-- #site-navigation -->
-
-      <?php 
-
-        // Get the information from the Options Page
-        $slogan = $header['slogan'];
-        $category_side_image = $header['category_side_image'];        
-
-      ?>
-      <div id="header-categories">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <?php echo $slogan; ?>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-7">
-              <img src="<?php echo $category_side_image; ?>" alt="Summer Clearance Sale" class="img-responsive">
-            </div>
-            <div class="col-5">
-              <div class="card">
-                <h4>Head-to-toe</h4>
-                <p>Explore our categories</p>
-                <?php 
-
-                    $taxonomy     = 'product_cat';
-                    $orderby      = 'name';  
-                    $empty        = 1;
-
-                    $args = array(
-                          'taxonomy'     => $taxonomy,
-                          'orderby'      => $orderby,                          
-                          'hide_empty'   => $empty
-                    );
-
-                    $all_categories = get_categories( $args );
-
-                    $parentCats = array();
-                    $allCatsHeader = '<li><a href="#tabs-all">All</a></li>';
-                    $allCatsBody = "";                    
-
-                    foreach ($all_categories as $cat) {
-                      $category_id = $cat->term_id;                                 
-                      $name = $cat->name;  
-                      $slug = $cat->slug;  
-                      $category_link = get_category_link($category_id);
-
-                      if($cat->parent == 0) {                          
-                          
-                          $allCatsHeader .= "<li><a href='#tabs-{$slug}'>{$name}</a></li>";
-
-                          $args2 = array(
-                                  'taxonomy'     => $taxonomy,
-                                  'child_of'     => 0,
-                                  'parent'       => $category_id,
-                                  'orderby'      => $orderby,                                  
-                                  'hide_empty'   => $empty
-                          );
-                          $sub_cats = get_categories( $args2 );
-                          if($sub_cats) {
-                              foreach($sub_cats as $sub_category) {
-                                $parentCats[$slug][$sub_category->term_id] = $sub_category->name ;
-                              }   
-                          }
-                      } else{
-                        $allCatsBody .= "<a href='{$category_link}' class='cat-btn'>{$name}</a>";
-                      }       
-                    }                     
-                ?>
-                <div id="tabs">
-                  <ul>
-                    <?php echo $allCatsHeader; ?>
-                  </ul>
-                  <div id="tabs-all">
-                    <?php echo $allCatsBody; ?>
-                  </div>
-                  <?php foreach ($parentCats as $key => $childCatArray) : ?>
-                  <div id="tabs-<?php echo $key; ?>">
-                    <?php foreach ($childCatArray as $keyChild => $childCat) : ?>
-                    <a href="<?php echo get_category_link($keyChild); ?>" class="cat-btn"><?php echo $childCat; ?></a>
-                    <?php endforeach; ?>
-                  </div>
-                  <?php endforeach; ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
   </div>
 
 

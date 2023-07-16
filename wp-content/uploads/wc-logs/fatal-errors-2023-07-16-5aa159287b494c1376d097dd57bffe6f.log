@@ -1,0 +1,60 @@
+2023-07-16T06:01:03+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php:17
+Stack trace:
+#0 C:\wamp64\www\liquidthought\wp-includes\shortcodes.php(355): product_row('', '', 'product-row')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\wamp64\www\liquidthought\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(produc...', 'do_shortcode_ta...', '[product-row]')
+#3 C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php(3): do_shortcode('[product-row]')
+#4 C:\wamp64\www\liquidthought\wp-includes\template-loader.php(106): include('C:\\wamp64\\www\\l...')
+#5 C:\wamp64\www\liquidthought\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\l...')
+#6 C:\wamp64\www\liquidthought\index.php(17): require('C:\\wamp64\\www\\l...')
+#7 {main}
+  thrown in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php on line 17
+
+2023-07-16T06:01:36+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php:17
+Stack trace:
+#0 C:\wamp64\www\liquidthought\wp-includes\shortcodes.php(355): product_row('', '', 'product-row')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\wamp64\www\liquidthought\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(produc...', 'do_shortcode_ta...', '[product-row]')
+#3 C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php(3): do_shortcode('[product-row]')
+#4 C:\wamp64\www\liquidthought\wp-includes\template-loader.php(106): include('C:\\wamp64\\www\\l...')
+#5 C:\wamp64\www\liquidthought\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\l...')
+#6 C:\wamp64\www\liquidthought\index.php(17): require('C:\\wamp64\\www\\l...')
+#7 {main}
+  thrown in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php on line 17
+
+2023-07-16T06:06:27+00:00 CRITICAL syntax error, unexpected token "if", expecting ":" in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php on line 39
+
+2023-07-16T06:09:29+00:00 CRITICAL Illegal class name in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php on line 10
+
+2023-07-16T06:09:55+00:00 CRITICAL Illegal class name in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php on line 10
+
+2023-07-16T06:09:58+00:00 CRITICAL Illegal class name in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\product_row.php on line 10
+
+2023-07-16T06:53:56+00:00 CRITICAL Non-abstract method FireDragon::layEgg() must contain body in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 36
+
+2023-07-16T06:56:12+00:00 CRITICAL syntax error, unexpected token ";", expecting "function" or "const" in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 34
+
+2023-07-16T06:56:20+00:00 CRITICAL syntax error, unexpected token ";", expecting "function" or "const" in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 34
+
+2023-07-16T06:56:43+00:00 CRITICAL syntax error, unexpected token ";", expecting "function" or "const" in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 35
+
+2023-07-16T06:56:53+00:00 CRITICAL Interface function Reptile::layEgg() cannot contain body in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 31
+
+2023-07-16T06:57:19+00:00 CRITICAL syntax error, unexpected token ";", expecting "function" or "const" in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 41
+
+2023-07-16T06:59:55+00:00 CRITICAL syntax error, unexpected token ";", expecting "function" or "const" in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 35
+
+2023-07-16T07:00:04+00:00 CRITICAL Interface function Reptile::layEgg() cannot contain body in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 31
+
+2023-07-16T07:01:18+00:00 CRITICAL Interface function Reptile::layEgg() cannot contain body in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 31
+
+2023-07-16T07:01:45+00:00 CRITICAL Interface function Reptile::layEgg() cannot contain body in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\index.php on line 31
+
+2023-07-16T08:41:51+00:00 CRITICAL Unclosed '{' on line 5 in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\category_tiles.php on line 69
+
+2023-07-16T08:41:51+00:00 CRITICAL Unclosed '{' on line 5 in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\category_tiles.php on line 69
+
+2023-07-16T08:41:57+00:00 CRITICAL Unclosed '{' on line 5 in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\category_tiles.php on line 69
+
+2023-07-16T08:43:06+00:00 CRITICAL syntax error, unexpected token ")" in C:\wamp64\www\liquidthought\wp-content\themes\happy_hunny\includes\shortcodes\category_tiles.php on line 56
+

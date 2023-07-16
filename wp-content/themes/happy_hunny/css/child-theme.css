@@ -15,8 +15,82 @@ body {
   letter-spacing: 0;
   line-height: 20px;
 }
+#topbar p a {
+  color: white;
+}
+#topbar p svg {
+  padding-left: 7px;
+}
 body {
-  background: url(//happyhunny.co.za/cdn/shop/t/2/assets/bee-desktop-1.webp?v=80096687704958325541655707739) top 150px right calc(50% + 440px) no-repeat;
+  background: url(//happyhunny.co.za/cdn/shop/t/2/assets/bee-desktop-1.webp?v=80096687704958325541655707739) top 39px right calc(50% + 399px) no-repeat;
+}
+@media (max-width: 767px) {
+  body {
+    background: none;
+  }
+}
+header#masthead {
+  padding-top: 3rem;
+}
+header#masthead hgroup.container .row {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+header#masthead #site-navigation.main-navigation {
+  padding: 3rem 0px;
+}
+header#masthead #site-navigation.main-navigation ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+header#masthead #site-navigation.main-navigation ul li {
+  padding: 0px 10px;
+}
+header#masthead #site-navigation.main-navigation ul li.menu-item-has-children > a::after {
+  content: "";
+  background-image: url("../assets/icons/nav-dropdown-arrow.svg");
+  width: 10px;
+  height: 8px;
+  position: relative;
+  display: inline-block;
+  background-repeat: no-repeat;
+  margin-left: 6px;
+}
+header#masthead #site-navigation.main-navigation ul li a {
+  color: #1D1D1A;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+header#masthead #site-navigation.main-navigation ul li ul.sub-menu {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  border-radius: 16px;
+  padding: 10px 20px;
+  list-style: none;
+  box-shadow: 0 2px 15px #0000001a;
+}
+header#masthead #site-navigation.main-navigation ul li ul.sub-menu li {
+  padding: 0px 10px 5px;
+}
+header#masthead #site-navigation.main-navigation ul li ul.sub-menu li a:hover {
+  color: #52b1b3;
+  text-decoration: none;
 }
 header#masthead h2 {
   font-size: 40px;
@@ -25,10 +99,26 @@ header#masthead h2 {
   line-height: 50px;
   text-align: center;
 }
-header#masthead #header-categories {
-  position: relative;
+header#masthead .search .icon button {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
 }
-header#masthead #header-categories::before {
+header#masthead .socials {
+  text-align: right;
+}
+#header-categories {
+  position: relative;
+  padding-bottom: 3rem;
+}
+#header-categories h2 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 50px;
+  text-align: center;
+}
+#header-categories::before {
   content: "";
   background: url(//happyhunny.co.za/cdn/shop/t/2/assets/home-intro-left.png?v=146906331530739839451654252713) left bottom no-repeat;
   position: absolute;
@@ -38,7 +128,7 @@ header#masthead #header-categories::before {
   height: 100%;
   z-index: 0;
 }
-header#masthead #header-categories::after {
+#header-categories::after {
   content: "";
   background: url(//happyhunny.co.za/cdn/shop/t/2/assets/home-intro-right.png?v=16488003890253336451654252715) right bottom no-repeat;
   position: absolute;
@@ -48,22 +138,22 @@ header#masthead #header-categories::after {
   height: 100%;
   z-index: 0;
 }
-header#masthead #header-categories .container {
+#header-categories .container {
   z-index: 1;
   position: relative;
 }
-header#masthead #header-categories .container .row {
-  padding: 3rem 0px;
+#header-categories .container .row {
+  padding: 2rem 0px;
 }
-header#masthead #header-categories .container .row .img-responsive {
+#header-categories .container .row .img-responsive {
   position: relative;
   height: 106%;
   top: -3%;
 }
-header#masthead #header-categories .container .row .card {
+#header-categories .container .row .card {
   height: 100%;
 }
-header#masthead #header-categories h4 {
+#header-categories h4 {
   color: #1D1D1A;
   font-size: 20px;
   font-weight: bold;
@@ -71,15 +161,48 @@ header#masthead #header-categories h4 {
   line-height: 24px;
   text-align: center;
 }
-header#masthead #header-categories p {
+#header-categories p {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 20px;
   text-align: center;
 }
+#header-categories #tabs {
+  border: none;
+}
+#header-categories #tabs ul.ui-tabs-nav {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+}
+#header-categories #tabs ul.ui-tabs-nav li {
+  border: none;
+  border-radius: 18px;
+  padding: 3px 20px;
+  background-color: transparent;
+}
+#header-categories #tabs ul.ui-tabs-nav li a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 21px;
+  color: #1D1D1A;
+}
+#header-categories #tabs ul.ui-tabs-nav li.ui-state-active {
+  background-color: #1D1D1A;
+}
+#header-categories #tabs ul.ui-tabs-nav li.ui-state-active a {
+  color: white;
+}
 body {
   color: #1D1D1A;
+}
+.product-row {
+  padding: 4rem 0px;
+  background-color: #EFEEEB;
 }
 .img-responsive {
   display: block;
@@ -91,4 +214,4 @@ body {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
-/*# sourceMappingURL=child-theme.css.map */
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sourceRoot%22%3A%22http%3A%2F%2Flocalhost%2Fliquidthought%2F%22%2C%22sources%22%3A%5B%22C%3A%2Fwamp64%2Fwww%2Fliquidthought%2Fwp-content%2Fthemes%2Fhappy_hunny%2Fcss%2Fscss%2F_fonts.scss%22%2C%22C%3A%2Fwamp64%2Fwww%2Fliquidthought%2Fwp-content%2Fthemes%2Fhappy_hunny%2Fcss%2Fscss%2F_header.scss%22%2C%22C%3A%2Fwamp64%2Fwww%2Fliquidthought%2Fwp-content%2Fthemes%2Fhappy_hunny%2Fcss%2Fscss%2F_mixins.scss%22%2C%22C%3A%2Fwamp64%2Fwww%2Fliquidthought%2Fwp-content%2Fthemes%2Fhappy_hunny%2Fcss%2Fscss%2F_home.scss%22%2C%22C%3A%2Fwamp64%2Fwww%2Fliquidthought%2Fwp-content%2Fthemes%2Fhappy_hunny%2Fcss%2Fscss%2F_general.scss%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAAA%3BAAEA%3BAAAA%3BAAAA%3BACFA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BACgBM%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BADPJ%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAKM%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUE%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAWZ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQJ%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAOJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAME%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAE9NV%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BACJA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%22%7D */

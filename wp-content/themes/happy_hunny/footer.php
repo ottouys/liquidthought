@@ -7,23 +7,80 @@
 ?>
 </div><!-- #main .wrapper -->
 <footer id="colophon" role="contentinfo">
-  <div class="site-info">
-    <?php do_action( 'twentytwelve_credits' ); ?>
-    <?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-			}
-			?>
-    <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwelve' ) ); ?>" class="imprint"
-      title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>">
-      <?php
-				/* translators: %s: WordPress */
-				printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' );
-				?>
-    </a>
-  </div><!-- .site-info -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Stay up to date</h2>
+        <h6>Whether you want to stay in the loop with Happy Hunny updates or just say "hi" when you miss us, subscribe
+          to our mailing list today.</h6>
+        <div id="newsletter-signup">
+          <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8"
+            class="newsletter-form"><input type="hidden" name="form_type" value="customer"><input type="hidden"
+              name="utf8" value="✓">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="newsletter-form__field-wrapper">
+              <div class="field">
+                <input id="NewsletterForm--footer" type="email" name="contact[email]" class="field__input" value=""
+                  aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email"
+                  required="">
+                <label class="field__label" for="NewsletterForm--footer">
+                  Email
+                </label>
+                <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe"
+                  aria-label="Subscribe">
+                  Sign me up
+                </button>
+              </div>
+            </div>
+          </form>
+          <span>We don't do spam. While our newsletters are short and always sweet, you can unsubscribe at any
+            time.</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+
+      </div>
+      <div class="col-4" class="socials">
+
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div class="row copyright">
+      <p>Copyright © 2022 Happy Hunny | All rights reserved</p>
+      <div>
+        <img src="//happyhunny.co.za/cdn/shop/t/2/assets/footer-logo-visa.svg?v=65670134466400942721654162161"
+          alt="mastercard">
+        <img src="//happyhunny.co.za/cdn/shop/t/2/assets/footer-logo-mastercard.svg?v=173426895483975008841654162160"
+          alt="mastercard">
+      </div>
+    </div>
+  </div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form">
+          <?php get_search_form(); ?>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php wp_footer(); ?>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>

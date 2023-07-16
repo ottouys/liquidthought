@@ -3,56 +3,64 @@
 add_shortcode( 'product-row', 'product_row' );
 
 
-function product_row( ) {
+function product_row( $atts, $content = null ) {
 
-  $products = new WP_Query(
-		array(
-			'post_type'      => 'product',
-			'posts_per_page' => -1,
-			'order'          => 'ASC',
-			'orderby'        => 'menu_order',
-		)
-	);
+  $a = shortcode_atts( array(
+    'title' => 'Products',  
+    'type' => '' 
+  ), $atts );
 
-	if ( $slides->have_posts() ) :
+  if($a['type'] == 'recent') {
+    $products = new WP_Query(
+      array(
+        'post_type'      => 'product',
+        'posts_per_page' => 4,
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'no_found_rows' => true,
+      )
+    );
+  } else if ($a['type'] == 'featured') {
+    $products = new WP_Query(
+      array(
+        'post_type'      => 'product',
+        'meta_key' => 'total_sales',
+        'orderby' => 'meta_value_num',
+        'posts_per_page' => 4,
+      )
+    );
+  }
+  
+
+	if ( $products->have_posts() ) :
 
     ob_start();    ?>
 
 <div class="product-row">
-  <div class="product-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="heading-wrapper">
+        <h5><?php echo $a['title']; ?></h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="product-wrapper">
 
+        <?php
+          while ( $products->have_posts() ) :
+            $products->the_post();  
+            
+            wc_get_template_part( 'content', 'product' );
 
-
-
-    <!-- <?php
-		while ( $products->have_posts() ) :
-			$slides->the_post();    
-      
-      global $post;
-
-      $image = get_post_meta( $post->ID, '_nectar_slider_image', true );
-
-
-      if(empty($image) || !$image){
-        continue;
-      }
-
-      ?>
-
-    <div class="slider-item">
-      <img src="<?php echo $image; ?>">
-      <?php 
-          // print "<pre>";
-          // print_r($image);
-          // print "</pre>";
+          endwhile; 
         ?>
 
+      </div>
     </div>
-    <?php endwhile; ?> -->
-
   </div>
 </div>
-
+<?php else : ?>
+<?php echo __( 'No products found' ); ?>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
